@@ -12,7 +12,8 @@ backlog = 5
 def command(clients):
 	while True:
 		cmd = input('$')
-		host,cmd = cmd.split(':',1)
+		try:	host,cmd = cmd.split(':',1)
+		except:	continue
 		if host in clients:
 			try:
 				s = clients[host]
